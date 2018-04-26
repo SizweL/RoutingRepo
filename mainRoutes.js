@@ -10,8 +10,6 @@ mainRouter.get('/about',function(req,res){
 });
 
 
-mainRouter.get('/',function(req,res){
-	res.send('Hello Node.js')
-});
+
 
 module.exports = mainRouter;

@@ -17,6 +17,9 @@ app.use("/todo", todoRouter );
 
 app.use('/cdn', express.static('public'));
 
+app.get('/create',function(req,res){
+	res.sendFile(path.join(__dirname, 'views', 'create.html' )  )
+});
 
 
 
