@@ -1,7 +1,7 @@
 {
-  "name": "expresslab2",
+  "name": "Group-3-Lab",
   "version": "1.0.0",
-  "description": "using npm with javascript",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "node ./test/todoLists_tape.js",
@@ -10,11 +10,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.1.1",
     "tape": "^4.9.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/witseie-elen4010/Group-3-Lab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/witseie-elen4010/Group-3-Lab/issues"
+  },
+  "homepage": "https://github.com/witseie-elen4010/Group-3-Lab#readme"
 }
