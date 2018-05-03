@@ -1,25 +1,30 @@
-let path = require('path');
-let express = require('express');
-let mainRouter = require('./mainRouter.js');
-let viewsRouter = require('./viewsRoutes.js');
-let actionsRouter = require('./BookSiteActions.js');
+var express = require('express');
+var path = require('path');
+var config = require('config');
+var app = express();
+var wishlistApp = require('./wishlist').app;
 
-let bodyParser = require('body-parser');
-let app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-//mounting our routers
-app.use('/',mainRouter);
-app.use('/views',viewsRouter);
-app.use('/actions',actionsRouter);
+function basePath(req) {
+	var externalPathValue = req.header("hybris-external-path");
 
-app.use('/cdn', express.static('json'));
-
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+	if (externalPathValue) {
+		//remove trailing slash, if any
+		return externalPathValue.replace(/\/$/, "");
+	} else {
+		return "";
+	}
+}
+app.get('/', function (req, res) {
+	res.redirect(basePath(req) + "/api-console/");
 });
 
-app.listen(process.env.PORT || 3000);
-console.log("Express server running on port 3000");
+app.use(wishlistApp);
+
+
+
+var port = process.env.VCAP_APP_PORT || config.get('defaultPort');
+app.listen(port);
+console.log('Listening on port %s',port);
