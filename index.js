@@ -23,8 +23,5 @@ app.get('/', function (req, res) {
 
 app.use(wishlistApp);
 
-
-
-var port = process.env.VCAP_APP_PORT || config.get('defaultPort');
-app.listen(port);
-console.log('Listening on port %s',port);
+app.listen(process.env.PORT || 3000);
+console.log('Listening on port 3000');
