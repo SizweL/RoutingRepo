@@ -1,30 +1,27 @@
 {
-  "name": "Group-3-Lab",
+  "name": "expresslab2",
   "version": "1.0.0",
-  "description": "",
+  "description": "using npm with javascript",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test/todoLists_tape.js",
+    "test": "mocha",
     "start": "node index"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "ejs": "^2.5.9",
     "express": "^4.16.2",
-    "url": "^0.11.0"
+    "mongodb": "^3.0.7"
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
     "mocha": "^5.1.1",
-    "tape": "^4.9.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/witseie-elen4010/Group-3-Lab.git"
-  },
-  "bugs": {
-    "url": "https://github.com/witseie-elen4010/Group-3-Lab/issues"
-  },
-  "homepage": "https://github.com/witseie-elen4010/Group-3-Lab#readme"
+    "tape": "^4.9.0",
+    "tape-eslint": "^1.2.1"
+  }
 }
